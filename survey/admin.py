@@ -4,6 +4,6 @@ from django.contrib import admin
 from .models import Response, Person, Survey, Question
 
 class QuestionAdmin(admin.ModelAdmin):
-	fields =['question_text', 'response']
+	fields =['question_text']
 
 admin.site.register(Question, QuestionAdmin)
