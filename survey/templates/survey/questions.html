@@ -1,6 +1,8 @@
 {% extends "survey/base.html" %}
 {% block content %}
 
-{{ home_text }}
+{% for question in question_list %}
+	{{ question }},
+{% endfor %}
 
 {% endblock %}
