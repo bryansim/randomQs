@@ -3,7 +3,7 @@ from django.contrib import admin
 # Register your models here.
 from .models import Response, Person, Survey, Question
 
-class SurveyAdmin(admin.ModelAdmin):
-	fields =['person', 'question_text', 'response']
+class QuestionAdmin(admin.ModelAdmin):
+	fields =['question_text', 'response']
 
-admin.site.register(Survey, SurveyAdmin)
+admin.site.register(Question, QuestionAdmin)
