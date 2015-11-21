@@ -8,18 +8,11 @@ class User(models.Model): #Creates a new class 'Question' that is a sub-class of
 	def __str__(self):
 		return str(self.user_id)
 	
-class Question(models.Model): #Creates a new class 'Question' that is sub-class of the Model class in django.db.models.
+class Response(models.Model): #Creates a new class 'Question' that is sub-class of the Model class in django.db.models.
 	user = models.ForeignKey(User) #This means that each user can have multiple questions related to them (i.e., each user answers multiple questions`)
-	question_id = models.AutoField(primary_key=True) #This is the unique ID of the question)
+	response_id = models.AutoField(primary_key=True) #This is the unique ID of the question)
 	#This is the text of the question
 	question_text = models.CharField(max_length=200) #Class 'Question' has an attribute question_text that is a sub-class of the class 'CharField' in django.db.models.
+	user_answer = models.IntegerField(default=0)
 	def __str__(self):
-		return self.question_text
-	
-class Choice(models.Model): #Currently, each choice is uniquely linked to one question. Is this the best way to go?
-	question = models.ForeignKey(Question) #Each question will have a bunch of choices linked to them.
-	user = models.ForeignKey(User) #Each user will have a bunch of choices linked to them too??? 
-	choice_text = models.CharField(max_length=200) #This is the text of the choice.
-	votes = models.IntegerField(default = 0) #These are how many votes a choice has.
-	def __str__(self):
-		return self.choice_text
+		return [self.user, self.question_text, self.user_answer]
