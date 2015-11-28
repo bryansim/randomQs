@@ -6,6 +6,10 @@ This is a django project that will:
 2. It will loop through the existing responses, and find the most similar user. It will do this by using some sort of deviation score.
 3. It will return that user's demographic information (age, location)
 
+###11.23.2015###
+Updated views.py, home.html, and questions.html to display questions now.
+The questions in home.html will eventually form a Person object, and include age, etc. We can hard code this for now.
+
 ###11.21.2015###
 I made some changes to model.py, following this post:
 http://dba.stackexchange.com/questions/120246/best-data-modeling-approch-to-handle-redundant-foreign-keys-in-relational-model
