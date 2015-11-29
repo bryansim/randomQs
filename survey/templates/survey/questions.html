@@ -3,9 +3,12 @@
 
 {% for question in question_list %}
 <form method = "post">
-	{{ question }} <br>
-	<COMMENT> this has to eventually be changed to iterate through all the choices and put radio buttons next to each oft them.
-	<input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
+	{{ question }}<br>
+    {% for i in responses %}
+        {{ i }}
+        <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
+    {% endfor %}
+    <br>	
 {% endfor %}
 
 {% endblock %}
